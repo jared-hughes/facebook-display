@@ -1,0 +1,30 @@
+// main: ../style.scss
+
+.composer {
+  .header {
+    padding: 8px 0;
+    padding-right: 24px;
+    background-color: $gray-1;
+    border-bottom: 1px solid $gray-4;
+    border-radius: 2px 2px 0 0;
+    color: $gray-5;
+    font-weight: 600;
+    font-size: 12px;
+    padding-left: 4px;
+  }
+
+  .compose-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $white;
+
+    .icon-wrapper {
+      margin: 12px;
+    }
+
+    .message-wrapper {
+      color: $gray-4;
+    }
+  }
+}

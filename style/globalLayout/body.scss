@@ -1,0 +1,44 @@
+// main: ../style.scss
+
+body, html {
+  background-color: $gray-2;
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+}
+
+#global-container {
+  width: 1012px;
+  margin: 0 auto;
+
+  #content {
+    display: flex;
+
+    #left-col {
+      width: 180px;
+      min-height: 50px;
+      position: relative;
+    }
+
+    #content-col {
+      min-height: 600px;
+      width: 820px;
+      margin-left: 12px;
+      display: flex;
+      flex-direction: row-reverse;
+
+      #right-col {
+        margin-left: 12px;
+        width: 308px;
+        min-height: 100px;
+      }
+
+      #content-area {
+        width: 500px;
+        right: 320px;
+        min-height: 100px;
+        border: 1px solid $gray-4;
+      }
+    }
+  }
+}
