@@ -1,0 +1,59 @@
+// main: ../style.scss
+
+$post-padding: 12px;
+$post-fullwidth: 499px;
+
+.post {
+  font-size: 14px;
+  background-color: white;
+
+  .post-main-content {
+    padding: $post-padding $post-padding 0 $post-padding;
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: $gray-5;
+
+      .icon-wrapper {
+        margin: 3px 8px 3px 0px;
+      }
+
+      .name {
+        font-weight: 600;
+      }
+
+      .info {
+        .time {
+          font-size: 12px;
+        }
+      }
+
+      .dots-wrapper {
+        margin-left: auto;
+        align-self: flex-start;
+      }
+    }
+
+    .attachment {
+      &.full-width {
+        width: $post-fullwidth;
+        margin-left: -$post-padding;
+        margin-right: -$post-padding;
+
+        .image-full-width {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    //padding: 0 $post-padding;
+    border-bottom: 1px solid $gray-3;
+    border-radius: 0;
+  }
+}
