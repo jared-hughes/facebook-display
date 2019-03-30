@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Comment } from "./components";
-import getUser from "../getUser.js"
+import { WriteComment, Comment } from "./components";
 
 class Comments extends Component {
   render() {
@@ -23,6 +22,7 @@ class Comments extends Component {
             )
           )
         }
+        <WriteComment user="britain"/>
       </div>
     )
   }

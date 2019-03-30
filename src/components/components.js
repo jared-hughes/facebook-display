@@ -8,3 +8,4 @@ export Time from "./time";
 export TextBubble from "./textBubble";
 export Comment from "./comment";
 export Comments from "./comments";
+export WriteComment from "./writeComment";
