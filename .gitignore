@@ -3,3 +3,5 @@
 *.sass.map
 *.scss.map
 *.min.css
+node_modules/*
+dist/*
