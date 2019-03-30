@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ProfileIcon, PostCircumstance } from "./components";
+import { ProfileIcon, PostCircumstance, Time } from "./components";
 import getUser from "../getUser";
 
 class Post extends Component {
@@ -10,9 +10,16 @@ class Post extends Component {
      *  - circumstanceType: enum {"link", "timeline", "group", "profilePicture"}
      *  - circumstanceDest: string, only for link and timeline
      *  - time: string, time posted
+     *  - attachment: url to attachment image, will be stretched horizontally
      */
     const user = getUser(this.props.user);
 
+    let contentLines;
+    if (this.props.content) {
+      contentLines = this.props.content.map((line, index) =>
+        <p key={ index }> { line } </p>
+      );
+    }
     return (
       <div className="post card">
         <div className="post-main-content">
@@ -23,9 +30,7 @@ class Post extends Component {
                 dest={ this.props.circumstanceDest }
                 user = { this.props.user } />
               <div className="info">
-                <span className="time">
-                  { this.props.time }
-                </span>
+                <Time time={ this.props.time }/>
               </div>
             </div>
             <div className="dots-wrapper">
@@ -34,20 +39,10 @@ class Post extends Component {
             </div>
           </div>
           <div className="content">
-            <p>
-              hey hey! come to the vams bullet journal workshop :)) next 3 thursdays at lunch.
-            </p>
-
-            <p>
-              no experience needed, all decorative supplies will be provided whoohoo
-            </p>
-
-            <p>
-              stop by room 63 (ms. parker’s room across horseshoe)
-            </p>
+            { contentLines }
           </div>
           <div className="attachment full-width">
-            <img className="image-full-width" src="images/posts/attachment_image.png">
+            <img className="image-full-width" src={ this.props.attachment }>
             </img>
           </div>
         </div>
