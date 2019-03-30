@@ -29,6 +29,13 @@ const element = (
           author: "britain",
           content: "yeet",
           time: "9h",
+          children: [
+            {
+              author: "britain",
+              content: "yee-haw",
+              time: "thr33h"
+            }
+          ],
         },
       ]}/>
   </Content>

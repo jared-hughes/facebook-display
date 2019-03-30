@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { WriteComment, Comment } from "./components";
+import { WriteComment, CommentsList } from "./components";
 
 class Comments extends Component {
   render() {
@@ -12,16 +12,7 @@ class Comments extends Component {
      */
     return (
       <div className="comments-container">
-        {
-          this.props.content.map((comment, index) =>
-            (
-              <Comment author={ comment.author }
-                content={ comment.content }
-                time={ comment.time }
-                key={ index }/>
-            )
-          )
-        }
+        <CommentsList comments={ this.props.content }/>
         <WriteComment user="britain"/>
       </div>
     )

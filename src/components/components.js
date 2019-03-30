@@ -9,3 +9,4 @@ export TextBubble from "./textBubble";
 export Comment from "./comment";
 export Comments from "./comments";
 export WriteComment from "./writeComment";
+export CommentsList from "./commentsList";
