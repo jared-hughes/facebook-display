@@ -5,6 +5,21 @@ const users = {
     pronoun: "it",
     possessivePronoun: "its"
   },
+  germany: {
+    name: "Germany"
+  },
+  france: {
+    name: "France"
+  },
+  churchill: {
+    name: "Winston Churchill"
+  },
+  italy: {
+    name: "Italy"
+  },
+  su: {
+    name: "Soviet Union"
+  },
   theAllies: {
     name: "The Allies"
   }

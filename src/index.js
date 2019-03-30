@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Content, Composer, Post } from "./components/components";
+import { Content, Composer, Post } from "./components";
 
 // class App extends React.Component {
 //   render() {
@@ -22,6 +22,7 @@ const element = (
       comments={[
         {
           author: "britain",
+          tagged: "france",
           content: "yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo",
           time: "3h",
         },
@@ -29,9 +30,13 @@ const element = (
           author: "britain",
           content: "yeet",
           time: "9h",
+          tagged: [
+            "italy",
+            "germany",
+          ],
           children: [
             {
-              author: "britain",
+              author: "italy",
               content: "yee-haw",
               time: "thr33h"
             }

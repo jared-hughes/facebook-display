@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Comments, ProfileIcon, PostCircumstance, Time } from "./components";
-import getUser from "../getUser";
+import { Comments, ProfileIcon, PostCircumstance, Time } from "../components";
+import { getUser } from "../backend";
 
 class Post extends Component {
   render() {

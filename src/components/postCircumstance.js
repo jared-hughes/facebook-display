@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Name } from "./components";
-import getUser from "../getUser";
+import { Name } from "../components";
+import { getUser } from "../backend";
 
 class PostCircumstance extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import getUser from "../getUser.js"
+import { getUser } from "../backend"
 
 class ProfileIcon extends Component {
   render() {

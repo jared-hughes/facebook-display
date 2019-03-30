@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import getUser from "../getUser";
+import { getUser } from "../backend";
 
 class Name extends Component {
   render() {

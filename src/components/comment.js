@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { TextBubble, ProfileIcon, Time, CommentsList } from "./components";
-import getUser from "../getUser.js"
+import { Name, TextBubble, ProfileIcon, Time, CommentsList } from "../components";
+import { getUser } from "../backend"
 
 class Comment extends Component {
   render() {
@@ -10,9 +10,20 @@ class Comment extends Component {
      *  - content: string content
      *  - children: children of the comment
      *  - depth: integer depth
+     *  - tagged: list of tagged users
      */
     if (this.props.depth > 1) {
       throw new Error("Comment depth more than 1 not accounted for");
+    }
+    let tagged;
+    if (this.props.tagged) {
+      if (this.props.tagged.map) {
+        tagged = this.props.tagged;
+      } else {
+        tagged = [ this.props.tagged ];
+      }
+    } else {
+      tagged = [];
     }
     return (
       <>
@@ -20,6 +31,17 @@ class Comment extends Component {
           <ProfileIcon user={ this.props.author }/>
           <div className="comment-content">
             <TextBubble>
+              <Name user={ this.props.author }/> {" "}
+              {
+                tagged.map((user, index) =>
+                  (
+                    <span key={ index }>
+                      <Name secondary user={ user }/>
+                      {" "}
+                    </span>
+                  )
+                )
+              }
               { this.props.content }
             </TextBubble>
             <div className="comment-actions">

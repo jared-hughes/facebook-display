@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { ProfileIcon, Comment } from "./components";
-import getUser from "../getUser.js"
+import { ProfileIcon, Comment } from "../components";
+import { getUser } from "../backend"
 
 class WriteComment extends Component {
   render() {

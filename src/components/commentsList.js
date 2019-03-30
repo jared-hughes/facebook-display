@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Comment } from "./components";
+import { Comment } from "../components";
 
 class CommentsList extends Component {
   render() {
@@ -19,6 +19,7 @@ class CommentsList extends Component {
                 time={ comment.time }
                 depth={ depth }
                 children={ comment.children }
+                tagged={ comment.tagged }
                 key={ index }/>
             )
           )

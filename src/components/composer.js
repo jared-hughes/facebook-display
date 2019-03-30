@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { ProfileIcon } from "./components";
-import getUser from "../getUser";
+import { ProfileIcon } from "../components";
+import { getUser } from "../backend";
 
 class Composer extends Component {
   render() {
