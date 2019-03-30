@@ -10,3 +10,5 @@ export Comment from "./components/comment";
 export Comments from "./components/comments";
 export WriteComment from "./components/writeComment";
 export CommentsList from "./components/commentsList";
+export Text from "./components/text";
+export PostContent from "./components/postContent";

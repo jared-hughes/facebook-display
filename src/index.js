@@ -13,11 +13,27 @@ const element = (
     <Composer user="britain"/>
     <Post user="britain" circumstanceType="profilePicture"
       circumstanceDest="theAllies" time="Feb 29, 1939"
-      content={[
-        "hey hey! come to the vams bullet journal workshop",
-        "no experience needed, all decorative supplies will be provided whoohoo",
-        "stop by room 63 (ms. parker’s room across horseshoe)"
-      ]}
+      content={
+        `
+          hey hey! come **to the** vams bullet journal workshop
+
+          no experience _needed_, all decorative supplies will be provided whoohoo
+
+          stop by room 63 (ms. parker’s room across horseshoe)
+
+              code is here
+
+          wazzup:
+            - how u doing
+            - stylesheet
+            - cows be mooing
+            - yeet
+
+          ## maybe too much
+
+          can I restrict Markdown?
+        `
+      }
       attachment="images/posts/attachment_image.png"
       comments={[
         {

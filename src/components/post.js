@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Comments, ProfileIcon, PostCircumstance, Time } from "../components";
+import { PostContent, Comments, ProfileIcon, PostCircumstance,
+  Time } from "../components";
 import { getUser } from "../backend";
 
 class Post extends Component {
@@ -14,12 +15,6 @@ class Post extends Component {
      */
     const user = getUser(this.props.user);
 
-    let contentLines;
-    if (this.props.content) {
-      contentLines = this.props.content.map((line, index) =>
-        <p key={ index }> { line } </p>
-      );
-    }
     return (
       <div className="post card">
         <div className="post-main-content">
@@ -38,9 +33,7 @@ class Post extends Component {
               </img>
             </div>
           </div>
-          <div className="content">
-            { contentLines }
-          </div>
+          <PostContent content={ this.props.content }/>
           <div className="attachment full-width">
             <img className="image-full-width" src={ this.props.attachment }>
             </img>
