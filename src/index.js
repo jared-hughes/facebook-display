@@ -10,8 +10,9 @@ import { Content, Composer, Post } from "./components/components";
 
 const element = (
   <Content>
-    <Composer/>
-    <Post/>
+    <Composer user="britain"/>
+    <Post user="britain" circumstanceType="link"
+      circumstanceDest="theAllies"/>
   </Content>
 );
 
