@@ -5,3 +5,6 @@ export ProfileIcon from "./profileIcon";
 export PostCircumstance from "./postCircumstance";
 export Name from "./name";
 export Time from "./time";
+export TextBubble from "./textBubble";
+export Comment from "./comment";
+export Comments from "./comments";

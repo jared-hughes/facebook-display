@@ -18,7 +18,19 @@ const element = (
         "no experience needed, all decorative supplies will be provided whoohoo",
         "stop by room 63 (ms. parker’s room across horseshoe)"
       ]}
-      attachment="images/posts/attachment_image.png"/>
+      attachment="images/posts/attachment_image.png"
+      comments={[
+        {
+          author: "britain",
+          content: "yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo",
+          time: "3h",
+        },
+        {
+          author: "britain",
+          content: "yeet",
+          time: "9h",
+        },
+      ]}/>
   </Content>
 );
 

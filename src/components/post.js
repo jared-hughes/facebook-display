@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ProfileIcon, PostCircumstance, Time } from "./components";
+import { Comments, ProfileIcon, PostCircumstance, Time } from "./components";
 import getUser from "../getUser";
 
 class Post extends Component {
@@ -50,7 +50,7 @@ class Post extends Component {
           <img src="images/icons/post-actions-bar.png">
           </img>
         </div>
-        comments todo
+        <Comments content={ this.props.comments }/>
       </div>
     )
   }

@@ -1,6 +1,10 @@
 @import 'config.scss';
 @import 'globalLayout/body';
+
 @import 'components/basic';
+@import 'components/comment';
+@import 'components/textBubble';
+
 @import 'feedItems/card';
 @import 'feedItems/post';
 @import 'feedItems/composer';
