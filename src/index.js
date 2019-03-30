@@ -11,8 +11,8 @@ import { Content, Composer, Post } from "./components/components";
 const element = (
   <Content>
     <Composer user="britain"/>
-    <Post user="britain" circumstanceType="link"
-      circumstanceDest="theAllies"/>
+    <Post user="britain" circumstanceType="profilePicture"
+      circumstanceDest="theAllies" time="Feb 29, 1939"/>
   </Content>
 );
 

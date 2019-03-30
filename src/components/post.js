@@ -9,6 +9,7 @@ class Post extends Component {
      *  - user: original poster
      *  - circumstanceType: enum {"link", "timeline", "group", "profilePicture"}
      *  - circumstanceDest: string, only for link and timeline
+     *  - time: string, time posted
      */
     const user = getUser(this.props.user);
 
@@ -23,7 +24,7 @@ class Post extends Component {
                 user = { this.props.user } />
               <div className="info">
                 <span className="time">
-                  1939
+                  { this.props.time }
                 </span>
               </div>
             </div>

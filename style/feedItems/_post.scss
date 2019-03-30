@@ -16,12 +16,16 @@ $post-fullwidth: 499px;
       align-items: center;
       color: $gray-5;
 
-      .icon-wrapper {
-        margin: 3px 8px 3px 0px;
+      .timeline-arrow-wrapper {
+        vertical-align: sub;
+
+        img {
+          height: 16px;
+        }
       }
 
-      .name {
-        font-weight: 600;
+      .icon-wrapper {
+        margin: 3px 8px 3px 0px;
       }
 
       .info {
