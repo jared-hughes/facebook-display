@@ -15,7 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "markdown-react-js": "^1.0.2"
+    "markdown-react-js": "^1.0.2",
+    "react-emojione": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

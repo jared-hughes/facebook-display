@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import MDReactComponent from "markdown-react-js";
+import MDReactComponent, { mdReact } from "markdown-react-js";
+import Emojify, { emojify } from "react-emojione";
 
 class Text extends Component {
   render() {
@@ -8,7 +9,15 @@ class Text extends Component {
      *  - text: text to be inserted (markdown)
      */
     return (
-      <MDReactComponent text={ this.props.text }/>
+      <Emojify style={
+        {
+          backgroundImage: "url(images/icons/emojione-3.1.2-64x64.png)",
+          height: 16,
+          top: -1
+        }
+      }>
+        { mdReact()(this.props.text) }
+      </Emojify>
     )
   }
 }

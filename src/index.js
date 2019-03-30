@@ -15,23 +15,9 @@ const element = (
       circumstanceDest="theAllies" time="Feb 29, 1939"
       content={
         `
-          hey hey! come **to the** vams bullet journal workshop
+          Happy Birthday to John and Johnny
 
-          no experience _needed_, all decorative supplies will be provided whoohoo
-
-          stop by room 63 (ms. parker’s room across horseshoe)
-
-              code is here
-
-          wazzup:
-            - how u doing
-            - stylesheet
-            - cows be mooing
-            - yeet
-
-          ## maybe too much
-
-          can I restrict Markdown?
+          Thanks for our wonderful family 👪
         `
       }
       attachment="images/posts/attachment_image.png"
