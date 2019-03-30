@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Feed } from "./feed.js";
+import { Content, Composer, Post } from "./components/components";
 
 // class App extends React.Component {
 //   render() {
@@ -9,11 +9,10 @@ import { Feed } from "./feed.js";
 // }
 
 const element = (
-  <Feed>
-    <div class="child">
-      ay
-    </div>
-  </Feed>
+  <Content>
+    <Composer/>
+    <Post/>
+  </Content>
 );
 
 ReactDOM.render(
