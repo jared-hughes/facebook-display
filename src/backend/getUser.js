@@ -1,29 +1,4 @@
-const users = {
-  britain: {
-    name: "Great Britain",
-    photo: "images/profiles/britain.png",
-    pronoun: "it",
-    possessivePronoun: "its"
-  },
-  germany: {
-    name: "Germany"
-  },
-  france: {
-    name: "France"
-  },
-  churchill: {
-    name: "Winston Churchill"
-  },
-  italy: {
-    name: "Italy"
-  },
-  su: {
-    name: "Soviet Union"
-  },
-  theAllies: {
-    name: "The Allies"
-  }
-}
+import users from "./users";
 
 function getPossessivePronoun(pronoun) {
   let possessive = ({
