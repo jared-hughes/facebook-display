@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Name, TextBubble, ProfileIcon, Time, CommentsList } from "../components";
-import { getUser } from "../backend"
+import { getUser } from "../backend";
+import { guaranteeList } from "../utils";
 
 class Comment extends Component {
   render() {
@@ -15,16 +16,8 @@ class Comment extends Component {
     if (this.props.depth > 1) {
       throw new Error("Comment depth more than 1 not accounted for");
     }
-    let tagged;
-    if (this.props.tagged) {
-      if (this.props.tagged.map) {
-        tagged = this.props.tagged;
-      } else {
-        tagged = [ this.props.tagged ];
-      }
-    } else {
-      tagged = [];
-    }
+    const tagged = guaranteeList(this.props.tagged);
+    const children = guaranteeList(this.props.children);
     return (
       <>
         <div className={ "comment depth-" + this.props.depth }>
@@ -53,14 +46,8 @@ class Comment extends Component {
             </div>
           </div>
         </div>
-        {
-          this.props.children
-          ? (
-              <CommentsList comments={ this.props.children }
-                depth={ this.props.depth }/>
-            )
-          : <></>
-        }
+        <CommentsList comments={ children }
+          depth={ this.props.depth }/>
       </>
     )
   }
