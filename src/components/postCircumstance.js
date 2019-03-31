@@ -6,7 +6,7 @@ class PostCircumstance extends Component {
   render() {
     /**
      * Props:
-     *  - type: enum {"link", "experience", "timeline", "group", "profilePicture"}
+     *  - type: enum {"link", "experience", "timeline", "group", "profilePicture", "coverPhoto"}
      *  - dest: string, only for link, experience, and timeline
      *  - people: user names, only for experience
      *  - doing: only for experience
@@ -47,10 +47,17 @@ class PostCircumstance extends Component {
         content = (
           <>
             {" "}
-            updated { user.possessivePronoun } profile picture
+            updated { user.possessivePronoun } profile picture.
           </>
         )
         break;
+      case "coverPhoto":
+        content = (
+          <>
+            {" "}
+            updated { user.possessivePronoun } cover photo.
+          </>
+        )
       case "experience":
         content = (
           <>
