@@ -17,12 +17,16 @@ function getPossessivePronoun(pronoun) {
 function getUser(user) {
   let out = users[user];
   if (!out) {
-    throw new Error("The user " + user + " does not exist.");
+    console.warn("The user " + user + " does not exist.");
+    out = {}
   }
   if (!out.name) {
-    throw new Error("The user " + user + " has no name.");
+    console.warn("The user " + user + " has no name.");
+    out.name = user;
   }
-  // no handling for photo
+  if (!out.photo) {
+    out.photo = "images/profiles/guest.png";
+  }
   if (!out.pronoun) {
     out.pronoun = "they";
   }
