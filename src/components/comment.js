@@ -47,7 +47,8 @@ class Comment extends Component {
           </div>
         </div>
         <CommentsList comments={ children }
-          depth={ this.props.depth }/>
+          depth={ this.props.depth }
+          parent={ this.props.author }/>
       </>
     )
   }

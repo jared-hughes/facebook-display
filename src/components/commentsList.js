@@ -7,8 +7,9 @@ class CommentsList extends Component {
      * Props:
      *  - comments: list of comments
      *  - depth: integer depth
+     *  - parent: author of parent comment (for nested comments)
      */
-    const depth = this.props.depth + 1 || 0
+    const depth = this.props.depth + 1 || 0;
     return (
       <>
         {
@@ -19,7 +20,7 @@ class CommentsList extends Component {
                 time={ comment.time }
                 depth={ depth }
                 children={ comment.children }
-                tagged={ comment.tagged }
+                tagged={ comment.tagged || this.props.parent }
                 key={ index }/>
             )
           )
