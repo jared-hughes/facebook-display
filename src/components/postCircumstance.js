@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Name, NameList } from "../components";
+import { Name, NameList, Text } from "../components";
 import { getUser } from "../backend";
 
 class PostCircumstance extends Component {
@@ -58,7 +58,7 @@ class PostCircumstance extends Component {
             is
             {" "}
             <a>
-              { this.props.doing }
+              <Text text={ this.props.doing }/>
             </a>
             {" "}
             with
@@ -68,7 +68,7 @@ class PostCircumstance extends Component {
             at
             {" "}
             <a>
-              { this.props.dest }
+              <Text text={ this.props.dest }/>
             </a>
           </>
         )

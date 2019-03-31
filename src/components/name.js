@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getUser } from "../backend";
+import { Text } from "../components";
 
 class Name extends Component {
   render() {
@@ -12,7 +13,7 @@ class Name extends Component {
     return (
       <span className={ this.props.secondary ? "" : "name" }>
         <a href="" className="profile-link">
-          { user.name }
+          <Text text={ user.name }/>
         </a>
       </span>
     )

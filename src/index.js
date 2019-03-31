@@ -12,7 +12,7 @@ const element = (
   <Content>
     <Composer user="britain"/>
     <Post user="britain" circumstanceType="experience"
-      circumstanceDest="San Francisco" circumstanceDoing="eating"
+      circumstanceDest="San Francisco" circumstanceDoing="🍴eating"
       circumstancePeople={["france", "usa"]}
       time="Feb 29, 1939"
       content={
