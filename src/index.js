@@ -27,7 +27,7 @@ const element = (
         {
           author: "britain",
           tagged: "france",
-          content: "yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo",
+          content: "yoyoyo y**oy**oyo 👪 _yoyoyo_ yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo yoyoyo",
           time: "3h",
         },
         {
@@ -41,7 +41,7 @@ const element = (
           children: [
             {
               author: "italy",
-              content: "yee-haw",
+              content: "yee-👪haw",
               time: "thr33h"
             }
           ],

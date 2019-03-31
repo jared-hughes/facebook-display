@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "markdown-react-js": "^1.0.2",
+    "markdown-to-jsx": "^6.9.3",
     "react-emojione": "^5.0.1"
   },
   "devDependencies": {

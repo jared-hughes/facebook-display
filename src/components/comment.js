@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Name, TextBubble, ProfileIcon, Time, CommentsList } from "../components";
+import { Name, Text, TextBubble, ProfileIcon, Time, CommentsList } from "../components";
 import { getUser } from "../backend";
 import { guaranteeList } from "../utils";
 
@@ -35,7 +35,7 @@ class Comment extends Component {
                   )
                 )
               }
-              { this.props.content }
+              <Text text={ this.props.content }/>
             </TextBubble>
             <div className="comment-actions">
               <a> Like </a>

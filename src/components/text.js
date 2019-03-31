@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MDReactComponent, { mdReact } from "markdown-react-js";
+import { compiler as mdCompiler } from "markdown-to-jsx";
 import Emojify, { emojify } from "react-emojione";
 
 class Text extends Component {
@@ -16,7 +16,7 @@ class Text extends Component {
           top: -1
         }
       }>
-        { mdReact()(this.props.text) }
+        { mdCompiler(this.props.text) }
       </Emojify>
     )
   }
