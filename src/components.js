@@ -4,6 +4,7 @@ export Post from "./components/post";
 export ProfileIcon from "./components/profileIcon";
 export PostCircumstance from "./components/postCircumstance";
 export Name from "./components/name";
+export NameList from "./components/nameList";
 export Time from "./components/time";
 export TextBubble from "./components/textBubble";
 export Comment from "./components/comment";

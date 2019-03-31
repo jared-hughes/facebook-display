@@ -23,7 +23,9 @@ class Post extends Component {
             <div className="post-info">
               <PostCircumstance type={ this.props.circumstanceType }
                 dest={ this.props.circumstanceDest }
-                user = { this.props.user } />
+                user={ this.props.user }
+                doing={ this.props.circumstanceDoing }
+                people= { this.props.circumstancePeople } />
               <div className="info">
                 <Time time={ this.props.time }/>
               </div>

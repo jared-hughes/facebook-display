@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import { Name } from "../components";
+import { Name, NameList } from "../components";
 import { getUser } from "../backend";
 
 class PostCircumstance extends Component {
   render() {
     /**
      * Props:
-     *  - type: enum {"link", "timeline", "group", "profilePicture"}
-     *  - dest: string, only for link and timeline
+     *  - type: enum {"link", "experience", "timeline", "group", "profilePicture"}
+     *  - dest: string, only for link, experience, and timeline
+     *  - people: user names, only for experience
+     *  - doing: only for experience
      *  - user: the user who sent
      */
     let content;
@@ -46,6 +48,28 @@ class PostCircumstance extends Component {
           <>
             {" "}
             updated { user.possessivePronoun } profile picture
+          </>
+        )
+        break;
+      case "experience":
+        content = (
+          <>
+            {" "}
+            is
+            {" "}
+            <a>
+              { this.props.doing }
+            </a>
+            {" "}
+            with
+            {" "}
+            <NameList users={ this.props.people }/>
+            {" "}
+            at
+            {" "}
+            <a>
+              { this.props.dest }
+            </a>
           </>
         )
         break;

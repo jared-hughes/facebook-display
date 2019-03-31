@@ -11,8 +11,10 @@ import { Content, Composer, Post } from "./components";
 const element = (
   <Content>
     <Composer user="britain"/>
-    <Post user="britain" circumstanceType="profilePicture"
-      circumstanceDest="theAllies" time="Feb 29, 1939"
+    <Post user="britain" circumstanceType="experience"
+      circumstanceDest="San Francisco" circumstanceDoing="eating"
+      circumstancePeople={["france", "usa"]}
+      time="Feb 29, 1939"
       content={
         `
           Happy Birthday to John and Johnny
