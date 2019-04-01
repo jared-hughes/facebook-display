@@ -6,11 +6,12 @@ class Comments extends Component {
     /**
      * Props:
      *  - content: list of comments
+     *  - viewer: person viewing
      */
     return (
       <div className="comments-container">
         <CommentsList comments={ this.props.content }/>
-        <WriteComment user="britain"/>
+        <WriteComment user={ this.props.viewer }/>
       </div>
     )
   }

@@ -7,6 +7,7 @@ class Post extends Component {
   render() {
     /**
      * Props:
+     *  - viewer: person viewing the post
      *  - user: original poster
      *  - circumstanceType: enum {"link", "timeline", "group", "profilePicture"}
      *  - circumstanceDest: string, only for link and timeline
@@ -44,7 +45,9 @@ class Post extends Component {
           <img src="images/icons/post-actions-bar.png">
           </img>
         </div>
-        <Comments content={ this.props.comments }/>
+        <Comments viewer={ this.props.viewer }
+          content={ this.props.comments }
+        />
       </div>
     )
   }

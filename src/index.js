@@ -16,6 +16,7 @@ const element = (
       data.posts.map((post, index) =>
         (
           <Post key={ index }
+            viewer={ data.viewer }
             author={ post.author }
             circumstance={ post.circumstance }
             time={ post.time }
