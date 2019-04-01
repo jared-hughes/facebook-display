@@ -13,19 +13,18 @@ class Post extends Component {
      *  - time: string, time posted
      *  - attachment: url to attachment image, will be stretched horizontally
      */
-    const user = getUser(this.props.user);
+    const user = getUser(this.props.author);
 
     return (
       <div className="post card">
         <div className="post-main-content">
           <div className="header">
-            <ProfileIcon user={ this.props.user }/>
+            <ProfileIcon user={ this.props.author }/>
             <div className="post-info">
-              <PostCircumstance type={ this.props.circumstanceType }
-                dest={ this.props.circumstanceDest }
-                user={ this.props.user }
-                doing={ this.props.circumstanceDoing }
-                people= { this.props.circumstancePeople } />
+              <PostCircumstance
+                author={ this.props.author }
+                content={ this.props.circumstance }
+              />
               <div className="info">
                 <Time time={ this.props.time }/>
               </div>

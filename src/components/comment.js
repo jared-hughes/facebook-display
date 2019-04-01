@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Name, Text, TextBubble, ProfileIcon, Time, CommentsList } from "../components";
-import { getUser } from "../backend";
 import { guaranteeList } from "../utils";
 
 class Comment extends Component {

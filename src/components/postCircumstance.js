@@ -13,8 +13,9 @@ class PostCircumstance extends Component {
      *  - user: the user who sent
      */
     let content;
-    const user = getUser(this.props.user);
-    switch (this.props.type) {
+    const info = this.props.content;
+    const user = getUser(this.props.author);
+    switch (info.type) {
       case "link":
         content = (
           <>
@@ -23,7 +24,7 @@ class PostCircumstance extends Component {
               link
             </a>
             {" "} to the group: {" "}
-            <Name secondary user={ this.props.dest }/>
+            <Name secondary user={ info.dest }/>
           </>
         )
         break;
@@ -39,7 +40,7 @@ class PostCircumstance extends Component {
             <span className="timeline-arrow-wrapper">
               <img src="images/icons/timeline-directed-arrow.png"></img>
             </span>
-            <Name user={ this.props.dest }/>
+            <Name user={ info.dest }/>
           </>
         )
         break;
@@ -65,27 +66,27 @@ class PostCircumstance extends Component {
             is
             {" "}
             <a>
-              <Text text={ this.props.doing }/>
+              <Text text={ info.doing }/>
             </a>
             {" "}
             with
             {" "}
-            <NameList users={ this.props.people }/>
+            <NameList users={ info.people }/>
             {" "}
             at
             {" "}
             <a>
-              <Text text={ this.props.dest }/>
+              <Text text={ info.dest }/>
             </a>
           </>
         )
         break;
       default:
-        throw new Error("Invalid type for postCircumstance: " + this.props.type);
+        throw new Error("Invalid type for postCircumstance: " + info.type);
     }
     return (
       <span className="poster">
-        <Name user={ this.props.user }/>
+        <Name user={ this.props.author }/>
         { content }
       </span>
     )
