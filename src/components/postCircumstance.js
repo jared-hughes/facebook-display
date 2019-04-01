@@ -6,7 +6,7 @@ class PostCircumstance extends Component {
   render() {
     /**
      * Props:
-     *  - type: enum {"link", "experience", "timeline", "group", "profilePicture", "coverPhoto"}
+     *  - type: enum {"link", "experience", "timeline", "group", "profilePicture", "coverPhoto", "plain"}
      *  - dest: string, only for link, experience, and timeline
      *  - people: user names, only for experience
      *  - doing: only for experience
@@ -29,6 +29,7 @@ class PostCircumstance extends Component {
         )
         break;
       case "group":
+      case "plain":
         content = (
           <>
           </>
