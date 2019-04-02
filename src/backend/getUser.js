@@ -1,4 +1,4 @@
-import users from "./users";
+import { getData } from "./data";
 
 function getPossessivePronoun(pronoun) {
   let possessive = ({
@@ -15,6 +15,7 @@ function getPossessivePronoun(pronoun) {
 }
 
 function getUser(user) {
+  const users = getData().users;
   let out = users[user];
   if (!out) {
     console.warn("The user " + user + " does not exist.");
