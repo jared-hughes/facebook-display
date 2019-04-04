@@ -1,4 +1,4 @@
-import data from "./data.json5";
+import data from "./data.json";
 
 function getData() {
   return data;

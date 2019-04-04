@@ -1,13 +1,17 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Content } from "./components";
 import { getData } from "./backend";
 
-const element = (
-  <Content data={ getData() }/>
-);
+class App extends Component {
+  render() {
+    return (
+      <Content data={ getData() }/>
+    )
+  }
+}
 
 ReactDOM.render(
-  element,
+  <App/>,
   document.getElementById('global-container')
 );
