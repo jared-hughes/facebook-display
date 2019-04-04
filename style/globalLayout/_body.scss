@@ -20,6 +20,10 @@ body, html {
 
   .card {
     page-break-inside: avoid;
+
+    .comment {
+      page-break-inside: avoid;
+    }
   }
 }
 
