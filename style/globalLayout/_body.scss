@@ -7,6 +7,22 @@ body, html {
   padding: 0;
 }
 
+@media print {
+  #left-col, .fb-header {
+    * {
+      display: none;
+    }
+  }
+
+  .fb-header {
+    min-height: 2em;
+  }
+
+  .card {
+    page-break-inside: avoid;
+  }
+}
+
 #global-container {
   width: 1012px;
   margin: 0 auto;
