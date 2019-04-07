@@ -20,7 +20,7 @@ class CommentsList extends Component {
                 time={ comment.time }
                 depth={ depth }
                 children={ comment.children }
-                tagged={ comment.tagged || this.props.parent }
+                tagged={ comment.tagged }
                 key={ index }/>
             )
           )
