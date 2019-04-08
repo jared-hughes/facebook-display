@@ -11,7 +11,7 @@ class Composer extends Component {
     const user = getUser(this.props.user);
     return (
       <div className="composer card">
-        <div className="header">
+        {/*<div className="header">
           Create Post
         </div>
         <div className="compose-area">
@@ -19,7 +19,9 @@ class Composer extends Component {
           <div className="message-wrapper">
             What's on your mind, { user.name }?
           </div>
-        </div>
+        </div>*/}
+        <img src="images/icons/what-on-mind.png">
+        </img>
       </div>
     )
   }

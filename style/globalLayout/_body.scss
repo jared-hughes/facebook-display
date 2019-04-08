@@ -8,31 +8,19 @@ body, html {
 }
 
 @media print {
-  #left-col, .fb-header {
-    * {
-      display: none;
-    }
-  }
-
-  .fb-header {
-    min-height: 2em;
-  }
-
   .card {
-    page-break-inside: avoid;
-
-    .comment {
+    & > * {
       page-break-inside: avoid;
     }
   }
 }
 
-#global-container {
-  width: 1012px;
-  margin: 0 auto;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .fb-header {
-    max-width: 60em;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -45,14 +33,60 @@ body, html {
       margin-left: 3em;
     }
   }
+}
+
+#global-container {
+  width: 1012px;
+  margin: 0 auto;
+  margin-top: -4px;
+
+  .top-block {
+    position: relative;
+    margin-bottom: 10px;
+
+    .coverPhoto {
+      width: 100%;
+    }
+
+    .white-bar {
+      margin-top: -4px;
+      width: 100%;
+      background: white;
+      text-align: center;
+
+      img {
+        margin-bottom: -4px;
+      }
+    }
+
+    .portrait-overlay {
+      bottom: 15px;
+      left: 15px;
+      position: absolute;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 50%;
+      width: 168px;
+      height: 168px;
+
+      img {
+        width: 160px;
+        border-radius: 50%;
+        border: 4px solid white;
+      }
+    }
+  }
 
   #content {
     display: flex;
 
     #left-col {
-      width: 180px;
+      width: 100%;
       min-height: 50px;
       position: relative;
+
+      #introDesc {
+        border: 6px solid white;
+      }
     }
 
     #content-col {

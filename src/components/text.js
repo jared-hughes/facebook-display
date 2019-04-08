@@ -8,6 +8,7 @@ class Text extends Component {
      * Props:
      *  - text: text to be inserted (markdown)
      */
+    // console.log(this.props.text);
     return (
       <Emojify style={
         {
@@ -16,7 +17,7 @@ class Text extends Component {
           top: -1
         }
       }>
-        { mdCompiler(this.props.text) }
+        { mdCompiler(this.props.text || "") }
       </Emojify>
     )
   }
