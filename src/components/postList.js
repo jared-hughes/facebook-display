@@ -16,6 +16,7 @@ class PostList extends Component {
                 content={ post.content }
                 attachment={ post.attachment }
                 comments={ post.comments }
+                response={ post.response }
               />
             )
           )

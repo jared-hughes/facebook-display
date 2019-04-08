@@ -1,0 +1,43 @@
+// main: ../style.scss
+
+.response-info {
+  margin: 10px 12px 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $gray-3;
+  color: $gray-6;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .react-info {
+    display: flex;
+
+    .react-list {
+      display: flex;
+      flex-direction: row;
+      margin-right: 5px;
+
+      .reaction {
+        position: relative;
+
+        img {
+          height: 16px;
+          width: 16px;
+          border-radius: 50%;
+          border: 2px solid white;
+          margin: -2px;
+        }
+      }
+    }
+  }
+
+  .response-spread {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0;
+
+    span {
+      margin-left: 8px;
+    }
+  }
+}

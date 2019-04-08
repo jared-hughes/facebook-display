@@ -12,15 +12,15 @@ class NameList extends Component {
     const users = guaranteeList(this.props.users);
     const names = users.map((user, index) => (
       <span key={ index }>
-        <Name secondary user={ user }/>
+        <Name secondary gray={ this.props.gray } user={ user }/>
         { users.length == 2 || index == users.length - 1 ? "" : ", " }
         { index == users.length - 2 ? " and " : "" }
       </span>
     ));
     return (
-      <>
+      <span>
         { names }
-      </>
+      </span>
     )
   }
 }

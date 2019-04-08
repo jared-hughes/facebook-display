@@ -11,7 +11,13 @@ a {
 }
 
 .name {
-  font-weight: 600;
+  &:not(.colored) a {
+    color: inherit;
+  }
+
+  &:not(.weak) {
+    font-weight: 600;
+  }
 }
 
 .time {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { PostContent, Comments, ProfileIcon, PostCircumstance,
-  Time } from "../components";
+  Time, ResponseInfo } from "../components";
 import { getUser } from "../backend";
 
 class Post extends Component {
@@ -41,6 +41,20 @@ class Post extends Component {
             </img>
           </div>
         </div>
+        <ResponseInfo response={ this.props.response }/>
+        {/*          {
+                    reacts: [
+                      "like",
+                      "love",
+                      "angry"
+                    ],
+                    likes: [
+                      "germany",
+                      "britain"
+                    ],
+                    comments: "9.7K",
+                    shares: "48K"
+                  }*/}
         <div className="actions full-width">
           <img src="images/icons/post-actions-bar.png">
           </img>

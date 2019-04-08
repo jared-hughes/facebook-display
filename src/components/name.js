@@ -10,8 +10,15 @@ class Name extends Component {
      *  - secondary: boolean, make lighter
      */
     const user = getUser(this.props.user);
+    let classes = ["name"];
+    if (this.props.secondary) {
+      classes.push("weak");
+    }
+    if (!this.props.gray) {
+      classes.push("colored");
+    }
     return (
-      <span className={ this.props.secondary ? "" : "name" }>
+      <span className={ classes.join(" ") }>
         <a href="" className="profile-link">
           <Text text={ user.name }/>
         </a>
