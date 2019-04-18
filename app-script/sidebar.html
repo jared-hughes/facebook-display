@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <!-- The CSS package above applies Google styling to buttons and other elements. -->
+
+    <style>
+    .branding-below {
+      bottom: 56px;
+      top: 0;
+    }
+    .branding-text {
+      left: 7px;
+      position: relative;
+      top: 3px;
+    }
+    .col-contain {
+      overflow: hidden;
+    }
+    .col-one {
+      float: left;
+      width: 50%;
+    }
+    .logo {
+      vertical-align: middle;
+    }
+    .radio-spacer {
+      height: 20px;
+    }
+    .width-100 {
+      width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <form>
+        <div class="block form-group">
+          <label for="converted-text"><b>Output</b></label>
+          <textarea class="width-100" id="converted-text" rows="10"></textarea>
+        </div>
+        <div class="block">
+          <input type="checkbox" id="first-post-only">
+          <label for="first-post-only"> Only use first post </label>
+        </div>
+        <div class="block">
+          <input type="checkbox" id="render-user-images">
+          <label for="render-user-images"> Render user images </label>
+        </div>
+        <div class="block" id="button-bar">
+          <button class="blue" id="run-conversion">Convert</button>
+          <a id="download-converted"> Download </a>
+        </div>
+      </form>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+
+      $(function() {
+        $('#run-conversion').click(runConversion);
+        $('#download-converted').click(downloadConverted);
+        $('#download-converted').disabled = true;
+      });
+
+      function runConversion() {
+        this.disabled = true;
+        $('#error').remove();
+        var firstPostOnly = $("#first-post-only").is(":checked");
+        var renderUserImages = $("#render-user-images").is(":checked");
+        google.script.run
+            .withSuccessHandler(
+              function(converted, element) {
+                $('#download-converted').disabled = false;
+                //Logger.log("file " + converted.file);
+                $('#converted-text').val(converted.file);
+                $('#download-converted').attr("href", converted.file);
+                //$('#converted-text').val(converted.string);
+                element.disabled = false;
+              })
+            .withFailureHandler(
+              function(msg, element) {
+                showError(msg, $('#button-bar'));
+                element.disabled = false;
+              })
+            .withUserObject(this)
+            .getConvertedAndFile(firstPostOnly, renderUserImages);
+      }
+
+      /**
+       * Inserts a div that contains an error message after a given element.
+       *
+       * @param {string} msg The error message to display.
+       * @param {DOMElement} element The element after which to display the error.
+       */
+      function showError(msg, element) {
+        var div = $('<div id="error" class="error">' + msg + '</div>');
+        $(element).after(div);
+      }
+    </script>
+  </body>
+</html>
