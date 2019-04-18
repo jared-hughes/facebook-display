@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ChooseProfile, Composer, PostList } from "../components";
+import { ChooseProfile, Composer, PostList, ProfileIcon } from "../components";
 
 class Content extends Component {
   constructor(props) {
@@ -22,6 +22,15 @@ class Content extends Component {
   render() {
     return (
       <>
+        <div className="top-block">
+          <img className="coverPhoto" src="images/icons/intro/flag.jpg"></img>
+          <div className="white-bar">
+            <img src="images/icons/intro/white-bar.png"></img>
+          </div>
+          <div className="portrait-overlay">
+            <ProfileIcon user={ this.state.data.viewer }/>
+          </div>
+        </div>
         <div className="fb-content" id="content">
           <div id="left-col">
             <img src="images/icons/intro/intro.png" id="introDesc"></img>
