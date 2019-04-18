@@ -7,7 +7,7 @@ class Composer extends Component {
     const user = getUser(this.props.user);
     return (
       <div className="composer card">
-        <img src="images/icons/what-on-mind.png">
+        <img src={ this.props.images.mind }>
         </img>
       </div>
     )

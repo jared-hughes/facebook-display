@@ -13,5 +13,5 @@ class App extends Component {
 
 ReactDOM.render(
   <App/>,
-  document.getElementById('global-container')
+  document.getElementById('root')
 );
