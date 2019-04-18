@@ -2,10 +2,6 @@ import React, { Component } from "react";
 
 class Reaction extends Component {
   render() {
-    /**
-     * Props:
-     *  - react: reaction name from enum
-     */
     let source;
     switch (this.props.react) {
       case "angry":

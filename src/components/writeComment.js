@@ -4,10 +4,6 @@ import { getUser } from "../backend"
 
 class WriteComment extends Component {
   render() {
-    /**
-     * Props:
-     *  - user: name of user viewing
-     */
     return (
       <div className="comment write-comment-container">
         <ProfileIcon user={ this.props.user }/>

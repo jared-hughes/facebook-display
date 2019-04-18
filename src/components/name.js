@@ -4,11 +4,6 @@ import { Text } from "../components";
 
 class Name extends Component {
   render() {
-    /**
-     * Props:
-     *  - user: name
-     *  - secondary: boolean, make lighter
-     */
     const user = getUser(this.props.user);
     let classes = ["name"];
     if (this.props.secondary) {

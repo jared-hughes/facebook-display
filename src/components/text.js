@@ -4,11 +4,6 @@ import Emojify, { emojify } from "react-emojione";
 
 class Text extends Component {
   render() {
-    /**
-     * Props:
-     *  - text: text to be inserted (markdown)
-     */
-    // console.log(this.props.text);
     return (
       <Emojify style={
         {

@@ -8,11 +8,12 @@ class Post extends Component {
     /**
      * Props:
      *  - viewer: person viewing the post
-     *  - user: original poster
-     *  - circumstanceType: enum {"link", "timeline", "group", "profilePicture"}
-     *  - circumstanceDest: string, only for link and timeline
+     *  - author: original poster, author of post
+     *  - circumstance: the circumstance of posting
      *  - time: string, time posted
+     *  - content: string content of post
      *  - attachment: url to attachment image, will be stretched horizontally
+     *  - response: how post is received by audience
      */
     const user = getUser(this.props.author);
 
@@ -42,19 +43,6 @@ class Post extends Component {
           </div>
         </div>
         <ResponseInfo response={ this.props.response }/>
-        {/*          {
-                    reacts: [
-                      "like",
-                      "love",
-                      "angry"
-                    ],
-                    likes: [
-                      "germany",
-                      "britain"
-                    ],
-                    comments: "9.7K",
-                    shares: "48K"
-                  }*/}
         <div className="actions full-width">
           <img src="images/icons/post-actions-bar.png">
           </img>

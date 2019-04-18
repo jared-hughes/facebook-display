@@ -1,3 +1,4 @@
+// in retrospect this does not seem like the best design
 export ChooseProfile from "./components/chooseProfile";
 export Comment from "./components/comment";
 export Comments from "./components/comments";

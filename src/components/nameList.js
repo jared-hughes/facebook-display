@@ -5,10 +5,6 @@ import { guaranteeList } from "../utils";
 
 class NameList extends Component {
   render() {
-    /**
-     * Props:
-     *  - users: list of users to be a list
-     */
     const users = guaranteeList(this.props.users);
     const names = users.map((user, index) => (
       <span key={ index }>

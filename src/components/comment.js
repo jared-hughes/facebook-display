@@ -10,7 +10,7 @@ class Comment extends Component {
      *  - content: string content
      *  - children: children of the comment
      *  - depth: integer depth
-     *  - tagged: list of tagged users
+     *  - tagged: list of tagged users at beginning
      */
     if (this.props.depth > 1) {
       throw new Error("Comment depth more than 1 not accounted for");
