@@ -91,7 +91,7 @@ function getUsers(renderUserImages) {
   var canonicalNames = {};
   var tables = allTables();
   tables.forEach(function(table) {
-    if (isProfileTable(table)) {
+    if (getTableType(table) == "profile") {
       // this is the profile table ... use it
       columns = {};
       // assume titles on row 1 (second one)
@@ -519,14 +519,49 @@ function getTableHeader(table) {
   return firstCell.getText();
 }
 
-function isProfileTable(table) {
+function getTableType(table) {
   var header = getTableHeader(table);
-  return Boolean(header.match(/^\s*Profiles\s*$/));
-}
-
-function isAboutMeTable(table) {
-  var header = getTableHeader(table);
-  return Boolean(header.match(/^\s*About Me\s*$/));
+  var names = [
+    {
+      name: "profile",
+      match: "Profiles"
+    },
+    {
+      name: "blue",
+      match: "Blue Bar"
+    },
+    {
+      name: "banner",
+      match: "Banner"
+    },
+    {
+      name: "friends",
+      match: "Friends"
+    },
+    {
+      name: "intro",
+      match: "Intro"
+    },
+    {
+      name: "white",
+      match: "White Bar"
+    },
+    {
+      name: "mind",
+      match: "What's on your mind"
+    },
+    {
+      name: "viewer",
+      match: "Viewer"
+    }
+  ];
+  for (var i = 0; i < names.length; i++) {
+    var regex = new RegExp("^\\s*" + escapeRegExp(names[i].match) + "\\s*$", "i");
+    if (header.match(regex)) {
+      return names[i].name;
+    }
+  }
+  return "post";
 }
 
 function allTables() {
@@ -535,34 +570,56 @@ function allTables() {
   return tables;
 }
 
+function getContextImages() {
+  var images = {};
+  var tables = allTables();
+  tables.forEach(function(table) {
+    var type = getTableType(table);
+    switch (type) {
+      case "blue":
+      case "banner":
+      case "friends":
+      case "intro":
+      case "white":
+      case "mind":
+        var cell = table.getRow(1).getCell(0);
+        images[type] = getImageBlobString(cell);
+        break;
+    }
+  });
+  return images;
+}
+
 function getConverted(firstPostOnly, renderUserImages) {
   var usersObject = getUsers(renderUserImages);
   var users = usersObject.users;
   var canonicalNames = usersObject.canonicalNames;
   var data = {
-    viewer: 'britain',
     posts: [],
     users: users
   }
+  data.images = getContextImages();
   var tables = allTables();
   var failed = false;
 
   var postAlreadyProcessed = false;
   tables.forEach(function(table) {
-    if (isProfileTable(table) || isAboutMeTable(table)) {
-      // this is some other table . . . skip
-      return;
-    }
-    if (firstPostOnly && postAlreadyProcessed) {
-      // only want one
-      return;
-    }
-    var post = tableToPost(table, usersObject);
-    postAlreadyProcessed = true;
-    if (post.failed) {
-      failed = true;
-    } else {
-      data.posts.push(post.post);
+    var type = getTableType(table);
+    if (type == "post") {
+      if (firstPostOnly && postAlreadyProcessed) {
+        // only want one
+        return;
+      }
+      var post = tableToPost(table, usersObject);
+      postAlreadyProcessed = true;
+      if (post.failed) {
+        failed = true;
+      } else {
+        data.posts.push(post.post);
+      }
+    } else if (type == "viewer") {
+      var cell = table.getRow(1).getCell(0);
+      data.viewer = closestUser(cell.getText(), usersObject);
     }
   });
   converted = JSON.stringify(data);
