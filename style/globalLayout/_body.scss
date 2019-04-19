@@ -14,6 +14,10 @@ body, html {
       page-break-inside: avoid;
     }
   }
+
+  .print-hidden {
+    display: none;
+  }
 }
 
 body {

@@ -23,7 +23,7 @@ class Content extends Component {
             <div id="left-col">
               <img src={ data.images.intro } id="introDesc" className="side-card"></img>
               <img src={ data.images.friends }></img>
-              <div className="side-card">
+              <div className="side-card print-hidden">
                 <DataInput newData={ this.props.newData }/>
               </div>
             </div>
