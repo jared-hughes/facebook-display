@@ -5,6 +5,8 @@ export Comments from "./components/comments";
 export CommentsList from "./components/commentsList";
 export Composer from "./components/composer";
 export Content from "./components/content";
+export DataInput from "./components/dataInput.js";
+export ErrorBoundary from "./components/errorBoundary.js";
 export Name from "./components/name";
 export NameList from "./components/nameList";
 export Post from "./components/post";

@@ -1,26 +1,9 @@
 import React, { Component } from "react";
-import { ChooseProfile, Composer, PostList, ProfileIcon } from "../components";
+import { ChooseProfile, Composer, PostList, ProfileIcon, DataInput } from "../components";
 
 class Content extends Component {
-  constructor(props) {
-    super(props);
-    this.viewerChange = this.viewerChange.bind(this);
-    this.state = {
-      data: this.props.data
-    }
-  }
-
-  viewerChange(value) {
-    this.setState((state, props) => ({
-      data: {
-        ...state.data,
-        viewer: value
-      }
-    }));
-  }
-
   render() {
-    let data = this.state.data;
+    let data = this.props.data;
     return (
       <>
         <div className="fb-header">
@@ -38,8 +21,11 @@ class Content extends Component {
           </div>
           <div className="fb-content" id="content">
             <div id="left-col">
-              <img src={ data.images.intro } id="introDesc"></img>
+              <img src={ data.images.intro } id="introDesc" className="side-card"></img>
               <img src={ data.images.friends }></img>
+              <div className="side-card">
+                <DataInput newData={ this.props.newData }/>
+              </div>
             </div>
             <div id="content-col">
               <div id="right-col">

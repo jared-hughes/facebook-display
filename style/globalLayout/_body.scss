@@ -87,8 +87,11 @@ body {
       min-height: 50px;
       position: relative;
 
-      #introDesc {
-        border: 6px solid white;
+      .side-card {
+        border-radius: 3px;
+        border: 1px solid $gray-3;
+        background: white;
+        padding: 5px;
       }
     }
 
